@@ -9,5 +9,5 @@ Features:
 - (Future) Find scale which contain a list of input notes
 - (Future) Add more kind of chord: augmented, diminished, dominant, ...
 
-Note: I am not good at music theory, so this tool just contains major, minor chords and scales.
+Note: I am not good at music theory, so now, this tool just contains major, minor chords and scales.
 
