@@ -76,20 +76,23 @@ Public Class Form1
             labChord.Text = ""
 
             noteres = note1.Interval(Ton(ComboBox3.SelectedIndex))
-            Console.WriteLine(ComboBox3.SelectedIndex)
-            Console.WriteLine(Ton(ComboBox3.SelectedIndex))
+            '      Console.WriteLine(ComboBox3.SelectedIndex)
+            ' Console.WriteLine(Ton(ComboBox3.SelectedIndex))
             labRes.Text = noteres.Name
 
-            Dim x As Chord = New Chord
-            For i As Integer = 1 To 7
-                x = inputScale.TriadChordInScale(i)
-                For j As Integer = 1 To 5 Step 2
-                    '  Console.WriteLine(x.NoteInTriadChord(j).Name)
-                    If noteres = x.NoteInTriadChord(j) Then
-                        x.ShowChord(labChord)
-                    End If
+            If (ComboBox1.SelectedIndex > -1 And ComboBox2.SelectedIndex > -1) Then
+                Dim x As Chord = New Chord
+                For i As Integer = 1 To 7
+                    x = inputScale.TriadChordInScale(i)
+                    For j As Integer = 1 To 5 Step 2
+                        '  Console.WriteLine(x.NoteInTriadChord(j).Name)
+                        If noteres = x.NoteInTriadChord(j) Then
+                            x.ShowChord(labChord)
+                        End If
+                    Next
                 Next
-            Next
+            End If
+           
         End If
     End Sub
 End Class
