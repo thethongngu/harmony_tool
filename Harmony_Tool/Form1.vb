@@ -14,6 +14,7 @@ Public Class Form1
         For i As Integer = 0 To 11 Step 1
             ComboBox1.Items.Add(Notes(i))
             Combo_Notes.Items.Add(Notes(i))
+            ComboBox3.Items.Add(Intervals(i))
         Next
 
         ComboBox2.Items.Add("major")
@@ -67,28 +68,28 @@ Public Class Form1
         About.Show()
     End Sub
 
-    Private Sub Combo_Notes_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Combo_Notes.SelectedIndexChanged, text_interval.TextChanged
-        If Combo_Notes.SelectedIndex > -1 And text_interval.Text <> "" Then
-            If CDbl(text_interval.Text) Mod 0.5 = 0 Then
-                Dim note1 As Note = New Note(Combo_Notes.Text)
-                Dim noteres As Note = New Note(labRes.Text)
-                labRes.Text = ""
-                labChord.Text = ""
+    Private Sub Combo_Notes_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Combo_Notes.SelectedIndexChanged, ComboBox3.SelectedIndexChanged
+        If Combo_Notes.SelectedIndex > -1 And ComboBox3.SelectedIndex > -1 Then
+            Dim note1 As Note = New Note(Combo_Notes.Text)
+            Dim noteres As Note = New Note(labRes.Text)
+            labRes.Text = ""
+            labChord.Text = ""
 
-                noteres = note1.Interval(CDbl(text_interval.Text))
-                labRes.Text = noteres.Name
+            noteres = note1.Interval(Ton(ComboBox3.SelectedIndex))
+            Console.WriteLine(ComboBox3.SelectedIndex)
+            Console.WriteLine(Ton(ComboBox3.SelectedIndex))
+            labRes.Text = noteres.Name
 
-                Dim x As Chord = New Chord
-                For i As Integer = 1 To 7
-                    x = inputScale.TriadChordInScale(i)
-                    For j As Integer = 1 To 5 Step 2
-                        '  Console.WriteLine(x.NoteInTriadChord(j).Name)
-                        If noteres = x.NoteInTriadChord(j) Then
-                            x.ShowChord(labChord)
-                        End If
-                    Next
+            Dim x As Chord = New Chord
+            For i As Integer = 1 To 7
+                x = inputScale.TriadChordInScale(i)
+                For j As Integer = 1 To 5 Step 2
+                    '  Console.WriteLine(x.NoteInTriadChord(j).Name)
+                    If noteres = x.NoteInTriadChord(j) Then
+                        x.ShowChord(labChord)
+                    End If
                 Next
-            End If
+            Next
         End If
     End Sub
 End Class

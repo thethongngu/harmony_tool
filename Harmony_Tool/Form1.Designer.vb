@@ -46,10 +46,10 @@ Partial Class Form1
         Me.Chord2 = New System.Windows.Forms.GroupBox()
         Me.label_chord2 = New System.Windows.Forms.Label()
         Me.Combo_Notes = New System.Windows.Forms.ComboBox()
-        Me.text_interval = New System.Windows.Forms.TextBox()
         Me.labRes = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.labChord = New System.Windows.Forms.Label()
+        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.Picture_Scale1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -252,29 +252,21 @@ Partial Class Form1
         Me.Combo_Notes.Size = New System.Drawing.Size(111, 23)
         Me.Combo_Notes.TabIndex = 5
         '
-        'text_interval
-        '
-        Me.text_interval.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.text_interval.Location = New System.Drawing.Point(133, 19)
-        Me.text_interval.Name = "text_interval"
-        Me.text_interval.Size = New System.Drawing.Size(37, 23)
-        Me.text_interval.TabIndex = 7
-        '
         'labRes
         '
         Me.labRes.AutoSize = True
         Me.labRes.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labRes.Location = New System.Drawing.Point(189, 22)
+        Me.labRes.Location = New System.Drawing.Point(260, 22)
         Me.labRes.Name = "labRes"
         Me.labRes.Size = New System.Drawing.Size(0, 15)
         Me.labRes.TabIndex = 8
         '
         'GroupBox3
         '
+        Me.GroupBox3.Controls.Add(Me.ComboBox3)
         Me.GroupBox3.Controls.Add(Me.labChord)
         Me.GroupBox3.Controls.Add(Me.Combo_Notes)
         Me.GroupBox3.Controls.Add(Me.labRes)
-        Me.GroupBox3.Controls.Add(Me.text_interval)
         Me.GroupBox3.Location = New System.Drawing.Point(12, 270)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(1052, 56)
@@ -286,10 +278,19 @@ Partial Class Form1
         '
         Me.labChord.AutoSize = True
         Me.labChord.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labChord.Location = New System.Drawing.Point(359, 22)
+        Me.labChord.Location = New System.Drawing.Point(454, 22)
         Me.labChord.Name = "labChord"
         Me.labChord.Size = New System.Drawing.Size(0, 15)
         Me.labChord.TabIndex = 9
+        '
+        'ComboBox3
+        '
+        Me.ComboBox3.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox3.FormattingEnabled = True
+        Me.ComboBox3.Location = New System.Drawing.Point(128, 19)
+        Me.ComboBox3.Name = "ComboBox3"
+        Me.ComboBox3.Size = New System.Drawing.Size(91, 23)
+        Me.ComboBox3.TabIndex = 10
         '
         'Form1
         '
@@ -346,9 +347,9 @@ Partial Class Form1
     Friend WithEvents label_Chord1 As System.Windows.Forms.Label
     Friend WithEvents label_chord2 As System.Windows.Forms.Label
     Friend WithEvents Combo_Notes As System.Windows.Forms.ComboBox
-    Friend WithEvents text_interval As System.Windows.Forms.TextBox
     Friend WithEvents labRes As System.Windows.Forms.Label
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
     Friend WithEvents labChord As System.Windows.Forms.Label
+    Friend WithEvents ComboBox3 As System.Windows.Forms.ComboBox
 
 End Class
