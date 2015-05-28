@@ -15,6 +15,8 @@ Public Class Form1
             ComboBox1.Items.Add(Notes(i))
             Combo_Notes.Items.Add(Notes(i))
             ComboBox3.Items.Add(Intervals(i))
+            ComboBox4.Items.Add(Notes(i))
+            ComboBox5.Items.Add(Notes(i))
         Next
 
         ComboBox2.Items.Add("major")
@@ -28,6 +30,8 @@ Public Class Form1
         '  MessageBox.Show(urlbase + " " + path + "\images\")
         urlbase = path + "\images\"
     End Sub
+
+
 
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged, ComboBox2.SelectedIndexChanged
         'Close last picture
@@ -60,7 +64,7 @@ Public Class Form1
         End Try
 
 
-
+        'Midi.Pit()
 
     End Sub
 
@@ -93,6 +97,26 @@ Public Class Form1
                 Next
             End If
            
+        End If
+    End Sub
+
+    Private Sub ComboBox4_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox4.SelectedIndexChanged, ComboBox5.SelectedIndexChanged
+        If ComboBox4.SelectedIndex > -1 And ComboBox5.SelectedIndex > -1 Then
+            Dim note1 As Note = New Note(ComboBox4.Text)
+            Dim note2 As Note = New Note(ComboBox5.Text)
+            For i As Double = 0 To 6 Step 0.5
+                If note1 = note2.Interval(i) Then
+                    For j As Integer = 0 To 11
+                        If Ton(j) * (-1) = i Then
+                            Label1.Text = CStr(i)
+                            Label2.Text = Intervals(j)
+                            Exit Sub
+                        End If
+                    Next
+                End If
+            Next
+
+            Label1.Text = "3"
         End If
     End Sub
 End Class

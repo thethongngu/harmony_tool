@@ -59,5 +59,14 @@ Namespace My.Resources
                 resourceCulture = value
             End Set
         End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Các hợp âm.
+        '''</summary>
+        Friend ReadOnly Property Chords() As String
+            Get
+                Return ResourceManager.GetString("Chords", resourceCulture)
+            End Get
+        End Property
     End Module
 End Namespace
